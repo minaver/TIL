@@ -9,7 +9,7 @@ public class inheritance {
 		test2.prn();
 		test2.getInformation();
 		
-		System.out.println(test2.name);
-		
+		System.out.println(test2.name); // can use protected field in same module 
+		System.out.println(test2.dept); // can use protected field in same module 
 	}
 }

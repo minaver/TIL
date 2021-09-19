@@ -2,9 +2,9 @@ package java_practice;
 
 public class Class_test2 extends Class_test1 {
 	
-	private String	dept;
+	protected String dept;
 	
-	public String getDept() {
+	public String getDept() { // dept getter
 		return dept;
 	}
 	
@@ -18,7 +18,8 @@ public class Class_test2 extends Class_test1 {
 		System.out.println("Name : "+ this.name + " Pay : "+this.pay+ " Department : "+this.dept);
 	}
 	
-	void prn(){
+	@Override
+	void prn(){ 
 		System.out.println("sub-class");
 	}
 }

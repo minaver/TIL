@@ -1,6 +1,6 @@
-package prac_protected;
+package neighbor_pack;
 
-import java_practice.*;
+import inheritance.*;
 
 public class Class_test4 extends Class_test2{ // practice use protected field 
 	

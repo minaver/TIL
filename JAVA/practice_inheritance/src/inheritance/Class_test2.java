@@ -1,4 +1,4 @@
-package java_practice;
+package inheritance;
 
 public class Class_test2 extends Class_test1 {
 	

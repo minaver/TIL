@@ -27,7 +27,10 @@ public class ClassThread extends Thread{
 	
 	public static void main(String[] args) {
 		ClassThread ct = new ClassThread("thread1");
+		ClassThread ct2 = new ClassThread("thread2");
+		
 		ct.start();
+		ct2.start();
 	}
 
 }

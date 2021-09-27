@@ -2,19 +2,20 @@ package practice_thread;
 
 public class ClassRunnable implements Runnable {
 	
-	private int[] temp;
+	private int index;
 	
 	public ClassRunnable() {
-		temp = new int[10];
 		
-		for(int start=0;start<temp.length;start++)
-			temp[start] = start;
+	}
+	
+	public ClassRunnable(int index) {
+		this.index = index;
+		//setName("no name");
 	}
 	
 	@Override
 	public void run() {
 		
-		for (int start:temp) {
 			try {
 				Thread.sleep(2000);
 			} catch(InterruptedException ie) {
@@ -23,15 +24,37 @@ public class ClassRunnable implements Runnable {
 		
 		
 		System.out.println("스레드이름 : "+Thread.currentThread().getName());
-		System.out.println("스레드ID : "+Thread.currentThread().getId());
-		System.out.println("temp value : "+start);
-		}
+		System.out.println(Thread.currentThread().getName()+" ID : "+Thread.currentThread().getId());
 	}
 	
 	public static void main(String[] args) {
-		ClassRunnable cr = new ClassRunnable();
-		Thread t = new Thread(cr,"firstThread");
 		
-		t.start();
+		Thread mainThread = Thread.currentThread();
+		System.out.println("main Thread Name : "+mainThread.getName());
+		System.out.println("main Thread ID : "+mainThread.getId());
+
+		
+		ClassRunnable cr = new ClassRunnable();
+		Thread t1 = new Thread(cr,"firstThread");
+		Thread t2 = new Thread(cr,"secondThread");
+		Thread t3 = new Thread(new ClassRunnable(3));
+		
+		t1.start();
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		t2.start();
+		try {
+			t2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		t3.start();
 	}
 }

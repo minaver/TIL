@@ -4,7 +4,7 @@ public class ClassAnonyRunnable {
 	public static void main(String[] args) {
 		
 		
-		// make thread object t1 
+// make thread object t1 
 		Thread t1 = new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -17,8 +17,8 @@ public class ClassAnonyRunnable {
 				System.out.println("[ t1 ]Thread name : "+Thread.currentThread().getName()+" || Thread ID : "+ Thread.currentThread().getId());
 			}
 		});
-		
-		// make no name thread object(can't reuse)
+	
+// make no name thread object(can't reuse)
 		 new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -32,7 +32,7 @@ public class ClassAnonyRunnable {
 			}
 		}).start();
 		 
-		 //main thread
+//main thread
 		 try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e1) {
@@ -41,7 +41,7 @@ public class ClassAnonyRunnable {
 		}
 		 System.out.println(Thread.currentThread().getName() + " : Am i first one?");
 		 
-		 // make anonymous thread
+// make anonymous thread
 		 new Thread(() ->{
 			 System.out.println("[ Anonymous1 ] Thread name : "+Thread.currentThread().getName()+" || Thread ID : "+ Thread.currentThread().getId());
 		 }).start();
@@ -57,7 +57,7 @@ public class ClassAnonyRunnable {
 			e.printStackTrace();
 		}
 		
-		// main thread
+// main thread
 		//System.out.println(Thread.currentThread().getName() + " : Am i first one?");
 		
 		t1.start();

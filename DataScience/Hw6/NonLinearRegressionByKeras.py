@@ -91,13 +91,13 @@ model = gen_sequential_model()
 
 # * 데이터 샘플 준비
 # 데이터 샘플을 충분히 준비하지 않으면 좋은 결과를 얻을 수 없다.
-X, y = gen_linear_regression_dateset(numofsamples=3000)
+X, y = gen_linear_regression_dateset(numofsamples=4000)
 
 # # 모델 학습
 # # epochs : 전체 데이터를 몇번 스캔하면서 학습할 것인가 // loss 그래프가 평평해지면 epochs를 더 늘려봤자 소용없다.
 # # verbose : 실제 트레이닝 하는 각 과정의 loss값 표현 (2)
 # # validation_split=0.3 : Training에 70% 를 쓰고 Validate에 나머지 30% 준다
-history = model.fit(X, y, epochs=1600, verbose=2, validation_split=0.3)
+history = model.fit(X, y, epochs=2000, verbose=2, validation_split=0.3)
 
 # # loss 그래프 생성
 plot_loss_curve(history)
@@ -108,18 +108,6 @@ print("test loss=", history.history['val_loss'][-1])
 
 # # 모델을 사용하여 예측
 predict_new_sample(model, np.array([0.3, 0.9, 0.4 ,0.1]))
-    
-    
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 
 

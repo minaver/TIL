@@ -45,9 +45,9 @@ def gen_linear_regression_dateset(numofsamples=500, w1=3, w2=5, w3=10, w4=20, b=
     
     for i in range(numofsamples):
         Z[i,0] = X[i,0]
-        Z[i,1] = (X[i,1])**2
-        Z[i,2] = (X[i,2])**3
-        Z[i,3] = (X[i,3])**4
+        Z[i,1] = (X[i,1])**3
+        Z[i,2] = (X[i,2])**4
+        Z[i,3] = (X[i,3])**5
 
     coef = np.array([w1, w2, w3, w4])
     bias = b

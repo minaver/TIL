@@ -97,7 +97,7 @@ X, y = gen_linear_regression_dateset(numofsamples=4000)
 # # epochs : 전체 데이터를 몇번 스캔하면서 학습할 것인가 // loss 그래프가 평평해지면 epochs를 더 늘려봤자 소용없다.
 # # verbose : 실제 트레이닝 하는 각 과정의 loss값 표현 (2)
 # # validation_split=0.3 : Training에 70% 를 쓰고 Validate에 나머지 30% 준다
-history = model.fit(X, y, epochs=2000, verbose=2, validation_split=0.3)
+history = model.fit(X, y, epochs=4000, verbose=2, validation_split=0.5)
 
 # # loss 그래프 생성
 plot_loss_curve(history)

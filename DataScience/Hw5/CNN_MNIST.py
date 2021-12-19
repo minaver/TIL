@@ -67,6 +67,8 @@ def train_mnist_model():
                 
                 #Dropout(0.5)
                 MaxPooling2D(pool_size=2),
+                Conv2D(32, kernel_size=3, activation='relu', name='conv_layer1'),
+                MaxPooling2D(pool_size=2),
                 Flatten(),
                 #Dense(20, activation='softmax', name='output_layer')
                 Dense(10, activation='softmax', name='output_layer')

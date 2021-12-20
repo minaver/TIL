@@ -62,12 +62,12 @@ def train_mnist_model():
                 Input(shape=(28,28,1), name='input_layer'),
                 
                 # n_filters * (filter_size + 1) = 32*(9+1) = 320
-                Conv2D(32, kernel_size=3, activation='relu', name='conv_layer1'),
+                Conv2D(32, kernel_size=5, activation='relu', name='conv_layer1'),
                 #Conv2D(64, kernel_size=3, activation='relu', name='conv_layer1'),
                 
                 #Dropout(0.5)
                 MaxPooling2D(pool_size=2),
-                Conv2D(32, kernel_size=3, activation='relu', name='conv_layer1'),
+                Conv2D(32, kernel_size=5 activation='relu', name='conv_layer1'),
                 MaxPooling2D(pool_size=2),
                 Flatten(),
                 #Dense(20, activation='softmax', name='output_layer')

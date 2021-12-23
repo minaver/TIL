@@ -28,7 +28,7 @@ def gen_sequential_model():
 # y = 1 + 3*x1 + 5*(x2**2) + 10*(x3**3) + 20(x4**4) + 10
 
 # Sample Data Set 생성
-def gen_linear_regression_dateset(numofsamples=500, w1=3, w2=5, w3=10, w4=20 b=11):
+def gen_linear_regression_dateset(numofsamples=500, w1=1, w2=2, w3=3, w4=4 b=5):
 
     np.random.seed(42)
     X = np.random.rand(numofsamples, 4)
